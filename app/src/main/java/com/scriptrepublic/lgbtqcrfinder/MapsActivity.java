@@ -106,16 +106,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mapFragment.getMapAsync(this);
 
-        View mapView =  findViewById(R.id.map);
-//        ImageView btnMyLocation = (ImageView) ((View) mapFragment.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
-//        btnMyLocation.setImageResource(R.drawable.rainbowflag);
-        View locationButton = ((View) mapView.findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
-
-        RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
-// position on right bottom
-        rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
-        rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
-        rlp.setMargins(0,0,30,30);
+//        View mapView =  findViewById(R.id.map);
+////        ImageView btnMyLocation = (ImageView) ((View) mapFragment.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+////        btnMyLocation.setImageResource(R.drawable.rainbowflag);
+//        View locationButton = ((View) mapView.findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+//
+//        RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
+//// position on right bottom
+//        rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
+//        rlp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+//        rlp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
+//        rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
+//
+//        rlp.addRule(RelativeLayout.ALIGN_PARENT_END, 0);
+//        rlp.addRule(RelativeLayout.ALIGN_END, 0);
+//        rlp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+//        rlp.setMargins(30, 0, 0, 40);
 
     }
 
