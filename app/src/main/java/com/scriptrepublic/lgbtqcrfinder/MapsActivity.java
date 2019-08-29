@@ -41,6 +41,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -172,14 +175,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Get the current location of the device and set the position of the map.
         getDeviceLocation();
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(14.6528341, 121.0352521);
-        BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.rainbow);
 
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Vertis").icon(icon));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.rnbw);
 
-        LatLng test = new LatLng(14.6566478, 121.0292917);
-        mMap.addMarker(new MarkerOptions().position(test).title("Sm North").icon(icon));
+        List<LocationObj> locationList = new ArrayList<>();
+
+        locationList.add(new LocationObj("Far Eastern University",14.6038621, 120.9864347));
+        locationList.add(new LocationObj("Resorts World Manila",14.518585, 121.0175851));
+        locationList.add(new LocationObj("PITX (Parañaque Integrated Terminal Exchange)",14.510605, 120.9892154));
+        locationList.add(new LocationObj("Ateneo De Manila University",14.6394505, 121.0758975));
+        locationList.add(new LocationObj("Lyceum of the Philippines University",14.5915772, 120.9777733));
+        locationList.add(new LocationObj("Concentrix Alabang",14.4486919, 120.902273));
+        locationList.add(new LocationObj("Concentrix North Edsa",14.6434786, 121.0184395));
+        locationList.add(new LocationObj("New Farmers Plaza",14.6203109, 121.0497981));
+        locationList.add(new LocationObj("Gateway Mall",14.6203109, 121.0497981));
+        locationList.add(new LocationObj("Araneta Center",14.6204458, 121.0528209));
+        locationList.add(new LocationObj("Colegio de San Lorenzo",14.6204458, 121.0528209));
+        locationList.add(new LocationObj("Philippine Ports Authority (PPA)",14.5862632, 120.971104));
+        locationList.add(new LocationObj("Yamang Bukid Farm",9.8912381, 118.6547487));
+        locationList.add(new LocationObj("Philippine National Police",14.6089062, 121.051132));
+        locationList.add(new LocationObj("Alimodian Central Elementary School (ACES)",10.818632, 122.4274028));
+        locationList.add(new LocationObj("Quezon City Hall",14.6464189, 121.047824));
+        locationList.add(new LocationObj("Arellano University",14.5973929, 120.9820637));
+        locationList.add(new LocationObj("Daniel Z. Romualdez Airport",11.2267387, 125.0239302));
+        locationList.add(new LocationObj("Clark International Airport",15.184654, 120.5547296));
+        locationList.add(new LocationObj("Ateneo De Davao University",7.0721719, 125.6109711));
+
+        for(int i=0; i<locationList.size(); i++){
+            String tempDescription = locationList.get(i).getLocDescription();
+            double tempLat = locationList.get(i).getLat();
+            double tempLng = locationList.get(i).getLng();
+            mMap.addMarker(new MarkerOptions().position(new LatLng(tempLat, tempLng)).title(tempDescription).icon(icon));
+        }
 
 
 
